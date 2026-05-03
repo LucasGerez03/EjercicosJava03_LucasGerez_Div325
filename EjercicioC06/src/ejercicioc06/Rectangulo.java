@@ -43,9 +43,5 @@ public class Rectangulo {
             System.out.println("Calculando perimetro por primera vez...");
         }
         return this.perimetro;
-    }
-    
-    
-    
-    
+    }    
 }
