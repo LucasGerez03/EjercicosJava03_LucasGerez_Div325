@@ -28,8 +28,33 @@ los datos de una instancia de Rectangulo que reciba como parámetro.
 public class Main {
 
     public static void main(String[] args) {
+        //---------------------------------------------------
+        //instanciando variables
+        Punto p1 = new Punto(7, 2);
+        Punto p3 = new Punto(2, 7);
+        Rectangulo miRect = new Rectangulo(p1, p3);
+        
+        
+        //---------------------------------------------------
+        //imprimir datos del rectangulo
+        System.out.println("--- INICIANDO PROGRAMA ---");
+        
+        //primera vez
+        mostrarDatosRectangulo(miRect);
+        
+        //segunda vez
+        mostrarDatosRectangulo(miRect);
         
         
     }
     
+    //metodo estatico
+    public static void mostrarDatosRectangulo(Rectangulo r) {
+        System.out.println("--- Datos del Rectangulo ---");
+        System.out.println("area: " + r.getArea());
+        System.out.println("Perimetro: " + r.getPerimetro());
+        System.out.println("----------------------------");
+    }
+    
 }
+

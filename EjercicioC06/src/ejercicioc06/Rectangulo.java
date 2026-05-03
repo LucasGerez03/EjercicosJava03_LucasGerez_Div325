@@ -1,12 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ejercicioc06;
 
 /**
- *
- * @author Usuario
  */
 public class Rectangulo {
     private float area;
@@ -19,21 +14,38 @@ public class Rectangulo {
     //----------------------------------------------------------
     //Constructor
 
-    public Rectangulo(Punto vertice2, Punto vertice4) {
-        this.vertice2 = vertice2;
-        this.vertice4 = vertice4;
+    public Rectangulo(Punto vertice1, Punto vertice3) {
+        this.vertice1 = vertice1;
+        this.vertice3 = vertice3;
+        
+        this.vertice2 = new Punto(vertice3.getX(), vertice1.getY());
+        this.vertice4 = new Punto(vertice1.getX(), vertice3.getY());
     }
     
     //----------------------------------------------------------
     //getters
 
     public float getArea() {
-        return area;
+        if (this.area == 0) {
+            float base = Math.abs(vertice1.getX() - vertice3.getX());
+            float altura = Math.abs(vertice1.getY() - vertice3.getY());
+            this.area = base * altura;
+            System.out.println("Calculando area por primera vez...");
+        }
+        return this.area;
     }
 
     public float getPerimetro() {
-        return perimetro;
+        if (this.perimetro == 0) {
+            float base = Math.abs(vertice1.getX() - vertice3.getX());
+            float altura = Math.abs(vertice1.getY() - vertice3.getY());
+            this.perimetro = (base + altura) * 2;
+            System.out.println("Calculando perimetro por primera vez...");
+        }
+        return this.perimetro;
     }
+    
+    
     
     
 }
